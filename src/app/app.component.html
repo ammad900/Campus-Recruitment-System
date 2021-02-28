@@ -1,0 +1,41 @@
+<md-toolbar color="primary">
+
+    <!-- Not needed here -->
+    <!--
+    <button class="app-icon-button" >
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+    -->
+    Campus Recruitment System
+
+    <span class="app-toolbar-filler"></span>
+      
+    <button *ngIf="!(isLoggedin$ | async)" md-raised-button md-button [routerLink]="['signin']" color="accent" class="app-button">SignIn</button>
+    <button *ngIf="!(isLoggedin$ | async)" md-raised-button [routerLink]="['signup']" color="accent" class="app-button">Signup</button>
+
+    <button *ngIf="(isLoggedin$ | async)" md-raised-button color="accent" (click)="logout()" class="app-button">Logout</button>
+</md-toolbar>
+
+<div class="app-content">
+  <router-outlet></router-outlet>
+</div>
+
+<!--
+<div>
+  <nav>
+    <a>Navigation:</a>
+    <ul>
+      <li><a [routerLink]="['home']">Home</a></li>
+      <li><a [routerLink]="['about']">About</a></li>
+      <li><a [routerLink]="['contact','test']">Contact Us</a></li>
+      <li><a [routerLink]="['protected']"> Protected</a></li>
+      <li><a [routerLink]="['parent']">Parent</a></li>
+    </ul>
+  </nav>
+
+  <router-outlet></router-outlet>
+</div>
+<span class="app-action" [class.m2app-dark]="isDarkTheme">
+  <button md-fab><md-icon>check</md-icon></button>
+</span>
+-->
